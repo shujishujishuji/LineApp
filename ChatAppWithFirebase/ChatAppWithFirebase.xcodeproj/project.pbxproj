@@ -23,6 +23,7 @@
 		A6A34DA626E940FE00765AD3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A6A34DA526E940FE00765AD3 /* GoogleService-Info.plist */; };
 		A6A34DA826E963E700765AD3 /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6A34DA726E963E700765AD3 /* SignUp.storyboard */; };
 		A6A34DAA26E9693E00765AD3 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A34DA926E9693E00765AD3 /* SignUpViewController.swift */; };
+		A6A34DAD26E9D52E00765AD3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A34DAC26E9D52E00765AD3 /* User.swift */; };
 		E5782B6189C418F564A18BE2 /* Pods_ChatAppWithFirebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CD28695E1ACD7F4EA42B1C6 /* Pods_ChatAppWithFirebase.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,7 @@
 		A6A34DA526E940FE00765AD3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A6A34DA726E963E700765AD3 /* SignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
 		A6A34DA926E9693E00765AD3 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		A6A34DAC26E9D52E00765AD3 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E99738D102E8DCF88038D829 /* Pods-ChatAppWithFirebase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatAppWithFirebase.debug.xcconfig"; path = "Target Support Files/Pods-ChatAppWithFirebase/Pods-ChatAppWithFirebase.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -100,6 +102,7 @@
 		A6A34D7926E8FF3E00765AD3 /* ChatAppWithFirebase */ = {
 			isa = PBXGroup;
 			children = (
+				A6A34DAB26E9D50A00765AD3 /* Models */,
 				A6A34DA026E91EE500765AD3 /* Extensions */,
 				A6A34D9F26E91ED800765AD3 /* Views */,
 				A6A34D9E26E91EC800765AD3 /* xibs */,
@@ -159,6 +162,14 @@
 				A6A34D9426E90AD900765AD3 /* UIColor-Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A6A34DAB26E9D50A00765AD3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A6A34DAC26E9D52E00765AD3 /* User.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -285,6 +296,7 @@
 				A6A34DAA26E9693E00765AD3 /* SignUpViewController.swift in Sources */,
 				A6A34D9526E90AD900765AD3 /* UIColor-Extension.swift in Sources */,
 				A6A34D9926E90EEF00765AD3 /* ChatRoomViewController.swift in Sources */,
+				A6A34DAD26E9D52E00765AD3 /* User.swift in Sources */,
 				A6A34D9126E901E500765AD3 /* ChatListViewController.swift in Sources */,
 				A6A34D9D26E9153E00765AD3 /* ChatRoomTableViewCell.swift in Sources */,
 				A6A34D7D26E8FF3E00765AD3 /* SceneDelegate.swift in Sources */,
