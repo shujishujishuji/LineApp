@@ -24,6 +24,8 @@
 		A6A34DA826E963E700765AD3 /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6A34DA726E963E700765AD3 /* SignUp.storyboard */; };
 		A6A34DAA26E9693E00765AD3 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A34DA926E9693E00765AD3 /* SignUpViewController.swift */; };
 		A6A34DAD26E9D52E00765AD3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A34DAC26E9D52E00765AD3 /* User.swift */; };
+		A6A34DAF26EA031300765AD3 /* UserList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6A34DAE26EA031300765AD3 /* UserList.storyboard */; };
+		A6A34DB326EA051000765AD3 /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A34DB226EA051000765AD3 /* UserListViewController.swift */; };
 		E5782B6189C418F564A18BE2 /* Pods_ChatAppWithFirebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CD28695E1ACD7F4EA42B1C6 /* Pods_ChatAppWithFirebase.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +51,8 @@
 		A6A34DA726E963E700765AD3 /* SignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
 		A6A34DA926E9693E00765AD3 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		A6A34DAC26E9D52E00765AD3 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A6A34DAE26EA031300765AD3 /* UserList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserList.storyboard; sourceTree = "<group>"; };
+		A6A34DB226EA051000765AD3 /* UserListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewController.swift; sourceTree = "<group>"; };
 		E99738D102E8DCF88038D829 /* Pods-ChatAppWithFirebase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatAppWithFirebase.debug.xcconfig"; path = "Target Support Files/Pods-ChatAppWithFirebase/Pods-ChatAppWithFirebase.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -124,6 +128,7 @@
 				A6A34D9026E901E500765AD3 /* ChatListViewController.swift */,
 				A6A34D9826E90EEF00765AD3 /* ChatRoomViewController.swift */,
 				A6A34DA926E9693E00765AD3 /* SignUpViewController.swift */,
+				A6A34DB226EA051000765AD3 /* UserListViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -134,6 +139,7 @@
 				A6A34D8E26E9016700765AD3 /* ChatList.storyboard */,
 				A6A34D9626E90E3100765AD3 /* ChatRoom.storyboard */,
 				A6A34DA726E963E700765AD3 /* SignUp.storyboard */,
+				A6A34DAE26EA031300765AD3 /* UserList.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -231,6 +237,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6A34DAF26EA031300765AD3 /* UserList.storyboard in Resources */,
 				A6A34D9B26E9138C00765AD3 /* ChatRoomTableViewCell.xib in Resources */,
 				A6A34D8726E8FF3F00765AD3 /* LaunchScreen.storyboard in Resources */,
 				A6A34D8426E8FF3F00765AD3 /* Assets.xcassets in Resources */,
@@ -296,6 +303,7 @@
 				A6A34DAA26E9693E00765AD3 /* SignUpViewController.swift in Sources */,
 				A6A34D9526E90AD900765AD3 /* UIColor-Extension.swift in Sources */,
 				A6A34D9926E90EEF00765AD3 /* ChatRoomViewController.swift in Sources */,
+				A6A34DB326EA051000765AD3 /* UserListViewController.swift in Sources */,
 				A6A34DAD26E9D52E00765AD3 /* User.swift in Sources */,
 				A6A34D9126E901E500765AD3 /* ChatListViewController.swift in Sources */,
 				A6A34D9D26E9153E00765AD3 /* ChatRoomTableViewCell.swift in Sources */,
