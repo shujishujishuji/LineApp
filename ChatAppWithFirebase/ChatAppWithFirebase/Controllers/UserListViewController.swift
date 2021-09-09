@@ -21,13 +21,11 @@ class UserListViewController: UIViewController {
     
     @IBOutlet weak var startChatButton: UIButton!
     
-    @IBAction func tappedCloseButton(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        userListTableView.tableFooterView = UIView()
         userListTableView.delegate = self
         userListTableView.dataSource = self
         startChatButton.layer.cornerRadius = 15
@@ -51,7 +49,7 @@ class UserListViewController: UIViewController {
             "createdAt": Timestamp()
         ] as [String : Any]
         
-        Firestore.firestore().collection("chatRoom").addDocument(data: docData) { (err) in
+        Firestore.firestore().collection("chatRooms").addDocument(data: docData) { (err) in
             if let err = err {
                 print("ChatRoom情報の保存に失敗しました。\(err)")
                 return
@@ -68,14 +66,13 @@ class UserListViewController: UIViewController {
                 print("user情報の取得に失敗しました。\(err)")
                 return
             }
-            
+
             snapshots?.documents.forEach({ (snapshot) in
                 let dic = snapshot.data()
                 let user = User.init(dic: dic)
                 user.uid = snapshot.documentID
                 
                 guard let uid = Auth.auth().currentUser?.uid else { return }
-                
                 if uid == snapshot.documentID {
                     return
                 }
@@ -128,7 +125,7 @@ class UserListTableViewCell: UITableViewCell {
     @IBOutlet weak var usernameLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        userImageView.layer.cornerRadius = 25
+        userImageView.layer.cornerRadius = 32.5
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
