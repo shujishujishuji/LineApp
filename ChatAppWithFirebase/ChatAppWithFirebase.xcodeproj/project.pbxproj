@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A69A8CDC26EA9223005B3A73 /* ChatRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69A8CDB26EA9223005B3A73 /* ChatRoom.swift */; };
 		A6A34D7B26E8FF3E00765AD3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A34D7A26E8FF3E00765AD3 /* AppDelegate.swift */; };
 		A6A34D7D26E8FF3E00765AD3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A34D7C26E8FF3E00765AD3 /* SceneDelegate.swift */; };
 		A6A34D8426E8FF3F00765AD3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6A34D8326E8FF3F00765AD3 /* Assets.xcassets */; };
@@ -32,6 +33,7 @@
 /* Begin PBXFileReference section */
 		017BF5F4573EFDBF03B778C8 /* Pods-ChatAppWithFirebase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatAppWithFirebase.release.xcconfig"; path = "Target Support Files/Pods-ChatAppWithFirebase/Pods-ChatAppWithFirebase.release.xcconfig"; sourceTree = "<group>"; };
 		5CD28695E1ACD7F4EA42B1C6 /* Pods_ChatAppWithFirebase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChatAppWithFirebase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A69A8CDB26EA9223005B3A73 /* ChatRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoom.swift; sourceTree = "<group>"; };
 		A6A34D7726E8FF3E00765AD3 /* ChatAppWithFirebase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatAppWithFirebase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6A34D7A26E8FF3E00765AD3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A6A34D7C26E8FF3E00765AD3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				A6A34DAC26E9D52E00765AD3 /* User.swift */,
+				A69A8CDB26EA9223005B3A73 /* ChatRoom.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 				A6A34D9126E901E500765AD3 /* ChatListViewController.swift in Sources */,
 				A6A34D9D26E9153E00765AD3 /* ChatRoomTableViewCell.swift in Sources */,
 				A6A34D7D26E8FF3E00765AD3 /* SceneDelegate.swift in Sources */,
+				A69A8CDC26EA9223005B3A73 /* ChatRoom.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
