@@ -10,6 +10,7 @@ import Firebase
 import FirebaseFirestore
 import FirebaseAuth
 import FirebaseStorage
+import PKHUD
 
 class SignUpViewController: UIViewController {
     @IBOutlet weak var profileImageButton: UIButton!
@@ -67,12 +68,10 @@ class SignUpViewController: UIViewController {
     }
     
     @objc private func tappedRegisterButton() {
-        guard let image = profileImageButton.imageView?.image else {
-            return
-        }
-        guard let uploadImage = image.jpegData(compressionQuality: 0.3) else {
-            return
-        }
+        let image = profileImageButton.imageView?.image ?? UIImage(named: "DSC_0008")
+        guard let uploadImage = image?.jpegData(compressionQuality: 0.3) else { return }
+        
+        HUD.show(.progress)
         
         let fileName = NSUUID().uuidString
         let storageRef = Storage.storage().reference().child("profile_image").child(fileName)
@@ -80,20 +79,19 @@ class SignUpViewController: UIViewController {
         storageRef.putData(uploadImage, metadata: nil) { (matadata, err) in
             if let err = err {
                 print("Firestorageへの情報の保存に失敗しました。\(err)")
+                HUD.hide()
                 return
             }
             
             storageRef.downloadURL { (url, err) in
                 if let err = err {
                     print("Firestorageからのダウンロードに失敗しました。\(err)")
+                    HUD.hide()
                     return
                 }
                 
-                guard let urlString = url?.absoluteString else {
-                    return
-                }
+                guard let urlString = url?.absoluteString else { return }
                 self.createUserToFirestore(profileImageUrl: urlString)
-                
             }
         }
     }
@@ -109,6 +107,7 @@ class SignUpViewController: UIViewController {
         Auth.auth().createUser(withEmail: email, password: password) { (res, err) in
             if let err = err {
                 print("認証情報の保存に失敗しました。\(err)")
+                HUD.hide()
                 return
             }
             print("認証情報の保存に成功しました。")
@@ -130,15 +129,20 @@ class SignUpViewController: UIViewController {
                 (err) in
                 if let err = err {
                     print("Firestoreへの保存に失敗しました\(err)")
+                    HUD.hide()
                     return
                 }
                 
                 print("Firestoreへの情報の保存が成功しました。")
+                HUD.hide()
                 self.dismiss(animated: true, completion: nil)
             }
         }
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
 }
 
 extension SignUpViewController: UITextFieldDelegate {

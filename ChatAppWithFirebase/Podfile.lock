@@ -481,6 +481,7 @@ PODS:
   - nanopb/decode (2.30908.0)
   - nanopb/encode (2.30908.0)
   - Nuke (10.4.1)
+  - PKHUD (5.3.0)
   - PromisesObjC (2.0.0)
 
 DEPENDENCIES:
@@ -489,6 +490,7 @@ DEPENDENCIES:
   - Firebase/Firestore
   - Firebase/Storage
   - Nuke
+  - PKHUD
 
 SPEC REPOS:
   trunk:
@@ -511,6 +513,7 @@ SPEC REPOS:
     - leveldb-library
     - nanopb
     - Nuke
+    - PKHUD
     - PromisesObjC
 
 SPEC CHECKSUMS:
@@ -533,8 +536,9 @@ SPEC CHECKSUMS:
   leveldb-library: 50c7b45cbd7bf543c81a468fe557a16ae3db8729
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   Nuke: fa2d83b3ee99bb88eccc62ab6c7590e207b50096
+  PKHUD: 98f3e4bc904b9c916f1c5bb6d765365b5357291b
   PromisesObjC: 68159ce6952d93e17b2dfe273b8c40907db5ba58
 
-PODFILE CHECKSUM: 2c8f80bf520a05e3bd2d490d5f1cd442bf21849f
+PODFILE CHECKSUM: 3fd80c3bb6a47268857aa399af360bd46cc44be0
 
 COCOAPODS: 1.11.0
