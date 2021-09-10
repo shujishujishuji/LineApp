@@ -15,6 +15,7 @@ class ChatRoom {
     let members: [String]
     let createdAt: Timestamp
     
+    var latestMessage: Message?
     var documentId: String?
     var partnerUser: User?
     
