@@ -16,6 +16,7 @@ class ChatListViewController: UIViewController {
     
     private let cellId = "cellId"
     private var chatrooms = [ChatRoom]()
+    private var chatRoomListener: ListenerRegistration?
     
     private var user: User? {
         didSet {
@@ -30,15 +31,24 @@ class ChatListViewController: UIViewController {
         
         setupViews()
         confirmLoggedInUser()
-        fetchLoginUserInfo()
         fetchChatroomsInfoFromFirestore()
     }
     
-    private func fetchChatroomsInfoFromFirestore() {
-        Firestore.firestore().collection("chatRooms")
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        fetchLoginUserInfo()
+
+    }
+    
+    func fetchChatroomsInfoFromFirestore() {
+        chatRoomListener?.remove()
+        chatrooms.removeAll()
+        chatListTableView.reloadData()
+        
+        chatRoomListener = Firestore.firestore().collection("chatRooms")
             .addSnapshotListener { (snapshots, err) in
                 
-//            .getDocuments { (snapshots, err) in
             if let err = err {
                 print("ChatRooms情報の取得に失敗しました。\(err)")
                 return
@@ -119,17 +129,34 @@ class ChatListViewController: UIViewController {
 
         
         let rigntBarButton = UIBarButtonItem(title: "新規チャット", style: .plain, target: self, action: #selector(tappedNavRightBarButton))
+        let logoutBarButton = UIBarButtonItem(title: "ログアウト", style: .plain, target: self, action: #selector(tappedLogoutButton))
         navigationItem.rightBarButtonItem = rigntBarButton
         navigationItem.rightBarButtonItem?.tintColor = .white
+        navigationItem.leftBarButtonItem = logoutBarButton
+        navigationItem.leftBarButtonItem?.tintColor = .white
+    }
+    
+    @objc private func tappedLogoutButton() {
+        do {
+            try Auth.auth().signOut()
+            pushLoginViewController()
+        } catch {
+            print("ログアウトに失敗しました。\(error)")
+        }
     }
     
     private func confirmLoggedInUser() {
         if Auth.auth().currentUser?.uid == nil {
-            let storyboar = UIStoryboard(name: "SignUp", bundle: nil)
-            let signUpViewController = storyboar.instantiateViewController(withIdentifier: "SignUpViewController") as! SignUpViewController
-            signUpViewController.modalPresentationStyle = .fullScreen
-            self.present(signUpViewController, animated: true, completion: nil)
+            pushLoginViewController()
         }
+    }
+    
+    private func pushLoginViewController() {
+        let storyboar = UIStoryboard(name: "SignUp", bundle: nil)
+        let signUpViewController = storyboar.instantiateViewController(withIdentifier: "SignUpViewController") as! SignUpViewController
+        let nav = UINavigationController(rootViewController: signUpViewController)
+        nav.modalPresentationStyle = .fullScreen
+        self.present(nav, animated: true, completion: nil)
     }
     
     
