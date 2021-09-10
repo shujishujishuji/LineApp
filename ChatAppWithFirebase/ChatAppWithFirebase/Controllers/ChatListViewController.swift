@@ -62,7 +62,6 @@ class ChatListViewController: UIViewController {
                         print("nothing to do")
                     }
                 })
-            
         }
     }
 
@@ -76,21 +75,22 @@ class ChatListViewController: UIViewController {
         
         if !isContain { return }
         
-            chatroom.members.forEach { (memberUid) in
-                if memberUid != uid {
-                    Firestore.firestore().collection("users").document(memberUid).getDocument{
-                        (userSnapshot, err) in
-                        if let err = err {
-                            print("ユーザ情報の取得に失敗しました。\(err)")
-                            return
-                        }
+        chatroom.members.forEach { (memberUid) in
+            if memberUid != uid {
+                Firestore.firestore().collection("users").document(memberUid).getDocument{
+                    (userSnapshot, err) in
+                    if let err = err {
+                        print("ユーザ情報の取得に失敗しました。\(err)")
+                        return
+                    }
                         
                     guard let dic = userSnapshot?.data() else { return }
                     let user = User(dic: dic)
                     user.uid = documentChange.document.documentID
+                    chatroom.partnerUser = user
                     
                     guard let chatroomId = chatroom.documentId else { return }
-                    let latestMessageId = chatroom.latestMissageId
+                    let latestMessageId = chatroom.latestMessageId
                     
                     if latestMessageId == "" {
                         self.chatrooms.append(chatroom)
