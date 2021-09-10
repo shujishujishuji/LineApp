@@ -23,37 +23,62 @@
                             <constraint firstAttribute="width" secondItem="MDm-QI-ikD" secondAttribute="height" multiplier="1:1" id="Oj6-jU-M1S"/>
                         </constraints>
                     </imageView>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="メッセージがここに入ります" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KaK-SW-4dV">
+                    <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="メッセージがここに入ります" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KaK-SW-4dV">
                         <rect key="frame" x="85" y="25" width="250" height="197"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="250" id="ei9-Wu-3u1"/>
                         </constraints>
                         <color key="textColor" systemColor="labelColor"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="12:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BGy-Hq-Rx0">
                         <rect key="frame" x="340" y="206" width="45" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eBJ-tq-mjS">
+                        <rect key="frame" x="329" y="25" width="255" height="197"/>
+                        <color key="backgroundColor" red="0.60392156862745094" green="0.8784313725490196" blue="0.38039215686274508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="255" id="3AZ-2D-OG5"/>
+                        </constraints>
+                        <color key="textColor" systemColor="labelColor"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    </textView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0F1-NV-SAX">
+                        <rect key="frame" x="285" y="200" width="36" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="KaK-SW-4dV" secondAttribute="bottom" constant="25" id="Fg1-xa-KAp"/>
+                    <constraint firstItem="eBJ-tq-mjS" firstAttribute="leading" secondItem="0F1-NV-SAX" secondAttribute="trailing" constant="8" id="GSQ-eh-FMq"/>
                     <constraint firstItem="MDm-QI-ikD" firstAttribute="leading" secondItem="Hkc-Gi-ycC" secondAttribute="leading" constant="15" id="LbU-mE-zb5"/>
                     <constraint firstItem="KaK-SW-4dV" firstAttribute="bottom" secondItem="BGy-Hq-Rx0" secondAttribute="bottom" constant="10" id="Li9-DT-Ziz"/>
+                    <constraint firstAttribute="trailing" secondItem="eBJ-tq-mjS" secondAttribute="trailing" constant="25" id="SZX-KG-bE3"/>
+                    <constraint firstItem="eBJ-tq-mjS" firstAttribute="top" secondItem="Hkc-Gi-ycC" secondAttribute="top" constant="25" id="ad0-G7-Mhw"/>
                     <constraint firstItem="KaK-SW-4dV" firstAttribute="top" secondItem="Hkc-Gi-ycC" secondAttribute="top" constant="25" id="kwE-03-QZd"/>
+                    <constraint firstAttribute="bottom" secondItem="0F1-NV-SAX" secondAttribute="bottom" constant="30" id="pTA-Hf-aXc"/>
                     <constraint firstItem="BGy-Hq-Rx0" firstAttribute="leading" secondItem="KaK-SW-4dV" secondAttribute="trailing" constant="5" id="rGa-pO-JVT"/>
                     <constraint firstItem="MDm-QI-ikD" firstAttribute="centerY" secondItem="Hkc-Gi-ycC" secondAttribute="centerY" id="tKX-V9-mzt"/>
                     <constraint firstItem="KaK-SW-4dV" firstAttribute="leading" secondItem="MDm-QI-ikD" secondAttribute="trailing" constant="10" id="wTc-h3-aUU"/>
+                    <constraint firstAttribute="bottom" secondItem="eBJ-tq-mjS" secondAttribute="bottom" constant="25" id="zG1-kc-uo7"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
-                <outlet property="dateLabel" destination="BGy-Hq-Rx0" id="2D5-CX-sYo"/>
-                <outlet property="messageTextView" destination="KaK-SW-4dV" id="ys8-KD-hOQ"/>
                 <outlet property="messageTextViewWidthConstraint" destination="ei9-Wu-3u1" id="mRJ-gk-ZNR"/>
+                <outlet property="myDateLabel" destination="0F1-NV-SAX" id="KGT-1A-uzJ"/>
+                <outlet property="myMessageTextView" destination="eBJ-tq-mjS" id="djr-SM-lXd"/>
+                <outlet property="myMessageTextViewWidthConstraint" destination="3AZ-2D-OG5" id="tNk-mc-yC9"/>
+                <outlet property="partnerDateLabel" destination="BGy-Hq-Rx0" id="2D5-CX-sYo"/>
+                <outlet property="partnerMessageTextView" destination="KaK-SW-4dV" id="ys8-KD-hOQ"/>
                 <outlet property="userImageView" destination="MDm-QI-ikD" id="amw-On-I80"/>
             </connections>
             <point key="canvasLocation" x="258.69565217391306" y="159.70982142857142"/>
